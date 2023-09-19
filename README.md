@@ -47,12 +47,10 @@ triangle.area() # Возвращает площадь треугольника</
 |      3|          0|
 |      3|          3|
 
-Построим таблицу, которая содержит в себе все назавния продуктов и их категории.
+Построим таблицу, которая содержит в себе все назавния продуктов и их категории.\
 Запрос - \
-<code> 
-df_rez = product_and_category.join(categories_table, categories_table.id == product_and_category.category_id, how="inner").join(products_table, products_table.id == product_and_category.name_id, how="full_outer")
-df_rez.select(df_rez.category,df_rez.name).show()
-</code>
+<code> df_rez = product_and_category.join(categories_table, categories_table.id == product_and_category.category_id, how="inner").join(products_table, products_table.id == product_and_category.name_id, how="full_outer")
+df_rez.select(df_rez.category,df_rez.name).show()</code>
 Полученная таблица:
 |     category|     name|
 |-------------|---------|
